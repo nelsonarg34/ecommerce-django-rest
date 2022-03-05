@@ -18,6 +18,9 @@ ALLOWED_HOSTS = ['*']
 
 DJANGO_SETTINGS_MODULE='core.settings'
 
+DEFAULT_PUBLIC_TENANT_DOMAIN='localhost'
+PUBLIC_SCHEMA_NAME='public'
+
 # Application definition
 
 SHARED_APPS = [
@@ -33,8 +36,6 @@ SHARED_APPS = [
     'django_filters',
     'rest_framework.authtoken',
     'rest_auth',
-    'business',
-    
 ]
 
 TENANT_APPS = [
@@ -47,6 +48,8 @@ TENANT_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'business',
+    'order',
+    'product',
    
 ]
 

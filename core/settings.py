@@ -24,6 +24,7 @@ PUBLIC_SCHEMA_NAME='public'
 # Application definition
 
 SHARED_APPS = [
+    'business',
     'authentication',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -120,7 +121,7 @@ WSGI_APPLICATION = 'core.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'tenant_schemas.postgresql_backend',
-        'NAME': 'ecommerce_rest',
+        'NAME': 'ecommerce-rest',
         'USER': 'postgres',
         'PASSWORD': 'glpat-Q6YsPnyiAU_1Y-yqUa8E',
         'HOST': 'localhost',

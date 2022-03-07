@@ -1,3 +1,13 @@
+# TYPE OF CATALOG
+
+CATALOG_CART = "cc"
+CATALOG_GENERAL = "cg"
+
+CATALOG_TYPE_CHOICE = (
+    (CATALOG_CART, "Carta (Actividad Gastronómica)"),
+    (CATALOG_GENERAL, "Catalógo General"),
+)
+
 # BUSINESS TYPE OF E-COMMERCE
 
 BUSINESS_TO_BUSINESS = "b2b"

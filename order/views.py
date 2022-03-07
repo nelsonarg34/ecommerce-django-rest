@@ -15,7 +15,6 @@ from .serializers import (
     OrderDetailSerializer,
     OrderSerializer,
     OrderDetailBasicSerializer,
-    OrderDetailUpdateSerializer,
 )
 from .models import Order, OrderDetail
 from .models import Product
@@ -60,12 +59,10 @@ class OrderDetailViewSet(viewsets.ModelViewSet):
     authentication_classes = [SessionAuthentication]
     filter_backends = [filters.SearchFilter]
     search_fields = ['order__status', 'product__name']
-   
 
     def get_queryset(self):
         user = self.request.user
         return OrderDetail.objects.select_related('order__buyer', 'product').filter(order__buyer=user)
-
 
     def create(self, request, *args, **kwargs):
         serializer = self.get_serializer(data=request.data)
@@ -114,7 +111,7 @@ class OrderDetailViewSet(viewsets.ModelViewSet):
         for order_product in orderdetail_serializer:
             if order_product.product == serializer.validated_data['product']:
                 raise exceptions.NotAcceptable("The product exists in the order.")
-            
+
         product.save(update_fields=['stock'])
         order_item = OrderDetail().create_order_item(order, product, order_quantity)
         serializer = OrderDetailBasicSerializer(order_item)
@@ -130,7 +127,6 @@ class OrderDetailViewSet(viewsets.ModelViewSet):
 
         max_quantity = 5 # Esto podría implementarse como un campo en Product
         order_quantity = request.data['quantity']
-        print(order_quantity)
         if order_quantity > max_quantity:
             raise exceptions.NotAcceptable("Quantity of this product not allowed.")
 

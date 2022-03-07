@@ -26,4 +26,3 @@ class Client(TenantMixin):
     def __str__(self):
         return self.name
 
-

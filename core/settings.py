@@ -51,7 +51,7 @@ TENANT_APPS = [
     'business',
     'order',
     'product',
-   
+    'catalog',
 ]
 
 INSTALLED_APPS = [
@@ -71,13 +71,13 @@ INSTALLED_APPS = [
     'business',
     'product',
     'order',
-   
+    'catalog',
 ]
 
 MIDDLEWARE = [
     'tenant_schemas.middleware.TenantMiddleware',
 
-     # Query Count -- Auditar consultas SQL
+    # Query Count -- Auditar consultas SQL
     'querycount.middleware.QueryCountMiddleware',
 
     # Peticiones CORS

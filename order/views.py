@@ -144,8 +144,8 @@ class OrderDetailViewSet(viewsets.ModelViewSet):
         self.perform_update(serializer)
 
         if getattr(instance, '_prefetched_objects_cache', None):
-            # If 'prefetch_related' has been applied to a queryset, we need to
-            # forcibly invalidate the prefetch cache on the instance.
+            # Si se ha aplicado 'prefetch_related' a un conjunto de consultas, debemos
+            # invalidar por la fuerza la caché de captación previa en la instancia.
             instance._prefetched_objects_cache = {}
 
         return Response(serializer.data)

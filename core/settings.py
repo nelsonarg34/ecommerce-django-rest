@@ -52,6 +52,7 @@ TENANT_APPS = [
     'order',
     'product',
     'catalog',
+    'cart',
 ]
 
 INSTALLED_APPS = [
@@ -72,6 +73,7 @@ INSTALLED_APPS = [
     'product',
     'order',
     'catalog',
+    'cart',
 ]
 
 MIDDLEWARE = [

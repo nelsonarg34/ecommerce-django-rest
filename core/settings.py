@@ -56,6 +56,7 @@ TENANT_APPS = [
 ]
 
 INSTALLED_APPS = [
+    'drf_yasg',
     'authentication',
     'tenant_schemas',
     'django.contrib.admin',

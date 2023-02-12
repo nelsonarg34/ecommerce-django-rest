@@ -27,7 +27,7 @@ services:
     volumes:
       - theungrateful_local_postgres_data:/var/lib/postgresql/data
     env_file:
-      - ./.env/.postgres
+      - ./.env/.django
     ports:
       - "5433:5432"
 

@@ -17,7 +17,7 @@ RUN apt-get update \
   && apt-get update && apt-get -y install libpq-dev python3-pip git netcat
 
 # Requirements are installed here to ensure they will be cached.
-COPY requirements.txt requirements_dev.txt /rocket_code/
+COPY requirements.txt /theungrateful/
 RUN pip install --no-cache-dir -r requirements.txt
 COPY . /theungrateful/
 

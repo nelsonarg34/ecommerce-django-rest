@@ -25,6 +25,10 @@ PUBLIC_SCHEMA_NAME='public'
 
 SHARED_APPS = [
     'business',
+    'order',
+    'product',
+    'catalog',
+    'cart',
     'authentication',
     'django.contrib.admin',
     'django.contrib.auth',
